@@ -2,14 +2,22 @@
 
 Panel interno para publicar a mano en X lo que el bot ([MP-YT-Discord](https://github.com/JoseLuisMD/MP-YT-Discord)) publica en Bluesky. La API de X es de pago, pero el enlace `x.com/intent/post` abre X con el texto ya escrito, y X genera solo la tarjeta del enlace.
 
-- **Qué hay pendiente:** el bot apunta cada vídeo y cada noticia de Mundos Pixelados en `cola_x.json` (clave `"x"` de `proyectos.py`).
-- **Qué está hecho:** `estado.json` de la rama **`estado`** de este repo guarda qué se ha publicado o borrado. El panel lo lee y lo escribe con la API de GitHub. Va en una rama aparte para que los commits de cada clic no se mezclen con `main` ni redespliegen la web. El `estado.json` de `main` no se usa: solo sirve para crear la rama.
+- **Qué hay pendiente:** el bot apunta cada vídeo y cada noticia de Mundos Pixelados en `cola_x.json`, en la rama `estado` del bot (clave `"x"` de `proyectos.py`).
+- **Qué está hecho:** `estado.json` de la rama **`estado`** de este repo guarda qué se ha publicado o borrado. El panel lo lee y lo escribe con la API de GitHub. Va en una rama aparte para que los commits de cada clic no se mezclen con `main` ni redespliegen la web.
 - **Archivos:** `index.html`, `estilos.css` y `panel.js`, sin build ni dependencias.
 
 ## Puesta en marcha
 
 1. **GitHub Pages:** Settings → Pages → *Build and deployment* → Source: **Deploy from a branch** → Branch: **main** / **(root)** → Save. Unos minutos después queda en https://joseluismd.github.io/MP-Backend/. No hay que enlazarlo desde ningún sitio: lleva `noindex, nofollow`.
-2. **Rama del estado (una sola vez):** en la página del repo, desplegable de ramas (`main`) → escribe `estado` → *Create branch estado from main*.
+2. **Rama del estado (ya está creada; solo si hubiera que rehacerla):** una rama huérfana, sin el historial de `main`, con un único `estado.json` vacío. Desde Git Bash, en la carpeta del repo:
+   ```bash
+   git switch --orphan estado
+   printf '{}\n' > estado.json
+   git add estado.json
+   git commit -m "Estado del panel de X"
+   git push -u origin estado
+   git switch main
+   ```
 3. **Token (uno, compartido):** GitHub → Settings → Developer settings → Personal access tokens → **Fine-grained tokens** → *Generate new token*:
    - Repository access: **Only select repositories** → `MP-Backend`
    - Permissions → Repository permissions → **Contents: Read and write** (con eso basta)

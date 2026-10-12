@@ -5,7 +5,7 @@
 // - Lo publicado y lo borrado se guarda en estado.json de este repo, en la rama «estado» (cada
 //   clic es un commit: así no se mezclan con main ni redespliegan Pages), con la API de GitHub y
 //   un token que cada uno pega aquí y se queda solo en su navegador (localStorage).
-// - En localhost (vista previa) se leen cola_x.json y estado.json de la propia carpeta y los
+// - En localhost (vista previa) se leen cola_x.json (y estado.json, si lo hay) de la propia carpeta y los
 //   cambios se guardan solo en el navegador.
 "use strict";
 
@@ -107,7 +107,7 @@ async function leerEstado() {
   });
   if (r.status === 404) {
     if (!leerToken()) return { datos: {}, sha: null };
-    throw new Error(`No se encuentra estado.json en la rama «${RAMA_ESTADO}» de MP-Backend: crea la rama desde main (ver README)`);
+    throw new Error(`No se encuentra estado.json en la rama «${RAMA_ESTADO}» de MP-Backend: hay que crearla (ver README)`);
   }
   if (!r.ok) throw new Error(await errorDe(r));
   const archivo = await r.json();
