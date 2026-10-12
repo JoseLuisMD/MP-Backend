@@ -1,14 +1,16 @@
 // Panel para publicar a mano en X lo que el bot (repo MP-YT-Discord) publica en Bluesky.
 //
 // - Lo pendiente sale de cola_x.json del bot (lo escribe common/publicadores.py, clase ColaX).
-// - Lo publicado y lo borrado se guarda en estado.json de este repo con la API de GitHub,
-//   con un token que cada uno pega aquí y se queda solo en su navegador (localStorage).
+// - Lo publicado y lo borrado se guarda en estado.json de este repo, en la rama «estado» (cada
+//   clic es un commit: así no se mezclan con main ni redespliegan Pages), con la API de GitHub y
+//   un token que cada uno pega aquí y se queda solo en su navegador (localStorage).
 // - En localhost (vista previa) se leen cola_x.json y estado.json de la propia carpeta y los
 //   cambios se guardan solo en el navegador.
 "use strict";
 
 const REPO_BOT = "JoseLuisMD/MP-YT-Discord";
 const REPO_PANEL = "JoseLuisMD/MP-Backend";
+const RAMA_ESTADO = "estado";
 const API = "https://api.github.com";
 const LOCAL = ["localhost", "127.0.0.1"].includes(location.hostname);
 const CLAVE_TOKEN = "mp-panel-x-token";
@@ -98,8 +100,14 @@ async function leerEstado() {
     const r = await fetch("estado.json", { cache: "no-store" });
     return { datos: r.ok ? await r.json() : {}, sha: null };
   }
-  const r = await fetch(`${API}/repos/${REPO_PANEL}/contents/estado.json`, { cache: "no-store", headers: cabeceras() });
-  if (r.status === 404 && !leerToken()) return { datos: {}, sha: null };
+  const r = await fetch(`${API}/repos/${REPO_PANEL}/contents/estado.json?ref=${RAMA_ESTADO}`, {
+    cache: "no-store",
+    headers: cabeceras(),
+  });
+  if (r.status === 404) {
+    if (!leerToken()) return { datos: {}, sha: null };
+    throw new Error(`No se encuentra estado.json en la rama «${RAMA_ESTADO}» de MP-Backend: crea la rama desde main (ver README)`);
+  }
   if (!r.ok) throw new Error(await errorDe(r));
   const archivo = await r.json();
   const texto = base64AUtf8(archivo.content || "").trim();
@@ -116,6 +124,7 @@ async function escribirEstado(datos, sha) {
     headers: cabeceras({ "Content-Type": "application/json" }),
     body: JSON.stringify({
       message: "Actualizar estado del panel de X",
+      branch: RAMA_ESTADO,
       content: utf8ABase64(JSON.stringify(datos, null, 2) + "\n"),
       ...(sha ? { sha } : {}),
     }),
