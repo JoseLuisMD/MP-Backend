@@ -1,6 +1,7 @@
 // Panel para publicar a mano en X lo que el bot (repo MP-YT-Discord) publica en Bluesky.
 //
-// - Lo pendiente sale de cola_x.json del bot (lo escribe common/publicadores.py, clase ColaX).
+// - Lo pendiente sale de cola_x.json del bot, en su rama «estado» (lo escribe common/publicadores.py, clase ColaX).
+//   Los dos repos guardan su estado en una rama con el mismo nombre (RAMA_ESTADO).
 // - Lo publicado y lo borrado se guarda en estado.json de este repo, en la rama «estado» (cada
 //   clic es un commit: así no se mezclan con main ni redespliegan Pages), con la API de GitHub y
 //   un token que cada uno pega aquí y se queda solo en su navegador (localStorage).
@@ -79,13 +80,13 @@ async function leerCola() {
   }
   // La API da el archivo al momento (raw.githubusercontent.com lo guarda en caché unos minutos)
   try {
-    const r = await fetch(`${API}/repos/${REPO_BOT}/contents/cola_x.json`, {
+    const r = await fetch(`${API}/repos/${REPO_BOT}/contents/cola_x.json?ref=${RAMA_ESTADO}`, {
       cache: "no-store",
       headers: cabeceras({ Accept: "application/vnd.github.raw+json" }),
     });
     if (r.ok) return r.json();
   } catch { /* se prueba con raw */ }
-  const r = await fetch(`https://raw.githubusercontent.com/${REPO_BOT}/main/cola_x.json?t=${Date.now()}`, { cache: "no-store" });
+  const r = await fetch(`https://raw.githubusercontent.com/${REPO_BOT}/${RAMA_ESTADO}/cola_x.json?t=${Date.now()}`, { cache: "no-store" });
   if (!r.ok) throw new Error(`No se pudo leer la cola (${r.status})`);
   return r.json();
 }
