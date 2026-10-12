@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Panel de X · Mundos Pixelados</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header class="cabecera">
+    <div class="cabecera__fila">
+      <h1 class="marca"><img class="marca__logo" src="logo.jpg" alt="" width="40" height="40"> Panel de X</h1>
+      <div class="acciones">
+        <label class="interruptor"><input type="checkbox" id="ver-borradas"> Ver borradas</label>
+        <button type="button" id="recargar" class="boton boton--secundario">Recargar</button>
+      </div>
+    </div>
+    <form id="form-token" class="token" hidden>
+      <label for="token">Token de GitHub (para marcar y borrar)</label>
+      <div class="token__fila">
+        <input type="password" id="token" autocomplete="off" spellcheck="false" placeholder="github_pat_…">
+        <button type="submit" class="boton">Guardar</button>
+      </div>
+    </form>
+    <div id="con-token" class="token token--guardado" hidden>
+      <span>Token guardado en este navegador</span>
+      <button type="button" id="olvidar" class="boton boton--secundario">Olvidar token</button>
+    </div>
+    <p id="aviso" class="aviso" role="status" hidden></p>
+  </header>
+
+  <main class="columnas">
+    <section class="columna">
+      <h2>Vídeos <span class="contador-pendientes" id="pendientes-video"></span></h2>
+      <div class="lista" id="lista-video"></div>
+    </section>
+    <section class="columna">
+      <h2>Noticias <span class="contador-pendientes" id="pendientes-noticia"></span></h2>
+      <div class="lista" id="lista-noticia"></div>
+    </section>
+  </main>
+
+  <template id="plantilla-tarjeta">
+    <article class="tarjeta">
+      <a class="tarjeta__imagen" target="_blank" rel="noopener noreferrer"><img alt="" loading="lazy"></a>
+      <div class="tarjeta__cuerpo">
+        <h3 class="tarjeta__titulo"></h3>
+        <p class="tarjeta__meta"><time></time><span class="tarjeta__marca"></span></p>
+        <pre class="tarjeta__texto"></pre>
+        <div class="tarjeta__pie">
+          <span class="tarjeta__caracteres"></span>
+          <div class="tarjeta__botones">
+            <a class="boton boton--x" target="_blank" rel="noopener noreferrer">Publicar en X</a>
+            <button type="button" class="boton boton--secundario tarjeta__deshacer">Deshacer</button>
+            <button type="button" class="boton boton--peligro tarjeta__borrar">Borrar</button>
+          </div>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <script src="panel.js"></script>
+</body>
+</html>
