@@ -47,10 +47,6 @@
     "estado": "borrada",
     "fecha": "2026-10-13T11:21:24.377Z"
   },
-  "063427a44be2": {
-    "estado": "borrada",
-    "fecha": "2026-10-13T15:37:50.429Z"
-  },
   "c762a00f186e": {
     "estado": "borrada",
     "fecha": "2026-10-13T15:37:55.067Z"
@@ -98,5 +94,9 @@
   "3bc8c687ca72": {
     "estado": "publicada",
     "fecha": "2026-10-14T16:41:06.766Z"
+  },
+  "e7d7d654fcc6": {
+    "estado": "publicada",
+    "fecha": "2026-10-14T22:25:01.462Z"
   }
 }
