@@ -11,30 +11,6 @@
     "estado": "publicada",
     "fecha": "2026-10-12T21:22:41.450Z"
   },
-  "4455abdd8d3c": {
-    "estado": "borrada",
-    "fecha": "2026-10-13T06:20:41.072Z"
-  },
-  "00fde86e7144": {
-    "estado": "borrada",
-    "fecha": "2026-10-13T06:20:47.749Z"
-  },
-  "207a38fc741e": {
-    "estado": "publicada",
-    "fecha": "2026-10-13T06:21:49.166Z"
-  },
-  "7e6fce6f31d8": {
-    "estado": "publicada",
-    "fecha": "2026-10-13T07:30:46.316Z"
-  },
-  "a5204f9e2fa1": {
-    "estado": "publicada",
-    "fecha": "2026-10-13T08:36:49.806Z"
-  },
-  "d79b3cfca6d8": {
-    "estado": "publicada",
-    "fecha": "2026-10-13T09:17:23.289Z"
-  },
   "0fde6b98f419": {
     "estado": "publicada",
     "fecha": "2026-10-13T11:20:00.660Z"
@@ -43,22 +19,6 @@
     "estado": "borrada",
     "fecha": "2026-10-13T11:21:24.377Z"
   },
-  "f9249bf5b579": {
-    "estado": "publicada",
-    "fecha": "2026-10-13T15:46:31.493Z"
-  },
-  "238b5e2da0a2": {
-    "estado": "borrada",
-    "fecha": "2026-10-13T15:47:24.813Z"
-  },
-  "d84ed7fb863e": {
-    "estado": "borrada",
-    "fecha": "2026-10-13T15:47:31.400Z"
-  },
-  "b96b82e244ae": {
-    "estado": "publicada",
-    "fecha": "2026-10-13T17:49:12.909Z"
-  },
   "2b0ca87d0a88": {
     "estado": "borrada",
     "fecha": "2026-10-14T06:14:16.981Z"
@@ -66,10 +26,6 @@
   "da20465f85bd": {
     "estado": "publicada",
     "fecha": "2026-10-14T07:55:28.927Z"
-  },
-  "931e007005b1": {
-    "estado": "publicada",
-    "fecha": "2026-10-14T10:57:12.151Z"
   },
   "3bc8c687ca72": {
     "estado": "publicada",
@@ -82,5 +38,9 @@
   "b0c511b669d1": {
     "estado": "publicada",
     "fecha": "2026-10-15T07:02:16.991Z"
+  },
+  "8ba66ce57e96": {
+    "estado": "publicada",
+    "fecha": "2026-10-16T08:24:19.592Z"
   }
 }
