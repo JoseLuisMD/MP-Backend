@@ -27,10 +27,6 @@
     "estado": "publicada",
     "fecha": "2026-10-14T16:41:06.766Z"
   },
-  "e7d7d654fcc6": {
-    "estado": "publicada",
-    "fecha": "2026-10-14T22:25:01.462Z"
-  },
   "b0c511b669d1": {
     "estado": "publicada",
     "fecha": "2026-10-15T07:02:16.991Z"
@@ -50,5 +46,9 @@
   "f05d3383e3cb": {
     "estado": "publicada",
     "fecha": "2026-10-16T22:03:53.999Z"
+  },
+  "aefd3856ba43": {
+    "estado": "publicada",
+    "fecha": "2026-10-17T09:50:54.177Z"
   }
 }
