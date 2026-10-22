@@ -98,16 +98,17 @@ h1, h2, h3 { margin: 0; }
 .boton--x { background: var(--texto); color: #000; }
 
 /* ---------- Columnas ---------- */
+/* Vídeos, noticias y reseñas en tres columnas; en pantallas estrechas, una debajo de otra */
 .columnas {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
   padding: 16px;
-  max-width: 1400px;
+  max-width: 1800px;
   margin: 0 auto;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .columnas { grid-template-columns: 1fr; }
 }
 
@@ -168,6 +169,8 @@ h1, h2, h3 { margin: 0; }
 .tarjeta:not(.tarjeta--publicada):not(.tarjeta--borrada) .tarjeta__deshacer { display: none; }
 .tarjeta--publicada .tarjeta__borrar, .tarjeta--borrada .tarjeta__borrar { display: none; }
 
-@media (max-width: 520px) {
+/* En las tres columnas no cabe la imagen al lado del texto: va encima. Con una sola columna (pantallas medianas)
+   vuelve al lado, y en el móvil, otra vez encima. */
+@media (min-width: 1101px), (max-width: 520px) {
   .tarjeta { grid-template-columns: 1fr; }
 }

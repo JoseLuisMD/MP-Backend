@@ -223,7 +223,7 @@ function tarjeta(e) {
 
 function pintar() {
   const verBorradas = $("ver-borradas").checked;
-  for (const tipo of ["video", "noticia"]) {
+  for (const tipo of ["video", "noticia", "resena"]) {
     const lista = $(`lista-${tipo}`);
     const entradas = cola.filter((e) => e.tipo === tipo);
     const visibles = entradas.filter((e) => verBorradas || estado[e.id]?.estado !== "borrada");

@@ -2,7 +2,7 @@
 
 Panel interno para publicar a mano en X lo que el bot ([MP-YT-Discord](https://github.com/JoseLuisMD/MP-YT-Discord)) publica en Bluesky. La API de X es de pago, pero el enlace `x.com/intent/post` abre X con el texto ya escrito, y X genera solo la tarjeta del enlace.
 
-- **Qué hay pendiente:** el bot apunta cada vídeo y cada noticia de Mundos Pixelados en `cola_x.json`, en la rama `estado` del bot (clave `"x"` de `proyectos.py`).
+- **Qué hay pendiente:** el bot apunta cada vídeo, cada noticia y cada reseña de Steam de Mundos Pixelados en `cola_x.json`, en la rama `estado` del bot (clave `"x"` de `proyectos.py`).
 - **Qué está hecho:** `estado.json` de la rama **`estado`** de este repo guarda qué se ha publicado o borrado. El panel lo lee y lo escribe con la API de GitHub. Va en una rama aparte para que los commits de cada clic no se mezclen con `main` ni redespliegen la web.
 - **Archivos:** `index.html`, `estilos.css` y `panel.js`, sin build ni dependencias.
 
