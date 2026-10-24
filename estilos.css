@@ -113,6 +113,37 @@ h1, h2, h3 { margin: 0; }
 }
 
 .columna h2 { font-size: 17px; margin-bottom: 12px; }
+
+/* El título de cada columna es un botón que pliega o despliega su lista (cada navegador lo recuerda) */
+.columna__cabecera {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 6px 8px;
+  margin: 0 -8px;
+  border: 0;
+  border-radius: 6px;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.columna__cabecera:hover { background: var(--superficie); }
+.columna__cabecera:focus-visible { outline: 2px solid var(--verde); outline-offset: 2px; }
+.columna__flecha {
+  width: 8px;
+  height: 8px;
+  flex: none;
+  border-right: 2px solid var(--texto-suave);
+  border-bottom: 2px solid var(--texto-suave);
+  transform: rotate(45deg) translate(-2px, -2px);   /* apunta hacia abajo: desplegada */
+  transition: transform .15s;
+}
+.columna--plegada .columna__flecha { transform: rotate(-45deg); }   /* apunta a la derecha: plegada */
+.columna--plegada h2 { margin-bottom: 0; }
+.columna--plegada .lista { display: none; }
 .contador-pendientes { font-weight: 500; color: var(--texto-suave); font-size: 14px; }
 
 .lista { display: flex; flex-direction: column; gap: 12px; }

@@ -35,16 +35,31 @@
   </header>
 
   <main class="columnas">
-    <section class="columna">
-      <h2>Vídeos <span class="contador-pendientes" id="pendientes-video"></span></h2>
+    <section class="columna" data-tipo="video">
+      <h2>
+        <button type="button" class="columna__cabecera" aria-expanded="true" aria-controls="lista-video">
+          <span class="columna__flecha" aria-hidden="true"></span>Vídeos
+          <span class="contador-pendientes" id="pendientes-video"></span>
+        </button>
+      </h2>
       <div class="lista" id="lista-video"></div>
     </section>
-    <section class="columna">
-      <h2>Noticias <span class="contador-pendientes" id="pendientes-noticia"></span></h2>
+    <section class="columna" data-tipo="noticia">
+      <h2>
+        <button type="button" class="columna__cabecera" aria-expanded="true" aria-controls="lista-noticia">
+          <span class="columna__flecha" aria-hidden="true"></span>Noticias
+          <span class="contador-pendientes" id="pendientes-noticia"></span>
+        </button>
+      </h2>
       <div class="lista" id="lista-noticia"></div>
     </section>
-    <section class="columna">
-      <h2>Reseñas <span class="contador-pendientes" id="pendientes-resena"></span></h2>
+    <section class="columna" data-tipo="resena">
+      <h2>
+        <button type="button" class="columna__cabecera" aria-expanded="true" aria-controls="lista-resena">
+          <span class="columna__flecha" aria-hidden="true"></span>Reseñas
+          <span class="contador-pendientes" id="pendientes-resena"></span>
+        </button>
+      </h2>
       <div class="lista" id="lista-resena"></div>
     </section>
   </main>

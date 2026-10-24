@@ -297,5 +297,29 @@ $("olvidar").addEventListener("click", () => {
 $("recargar").addEventListener("click", cargar);
 $("ver-borradas").addEventListener("change", pintar);
 
+// ---------------- Columnas plegables ----------------
+// Cada navegador recuerda qué columnas tiene plegadas (en el móvil van una debajo de otra)
+const CLAVE_PLEGADAS = "mp-panel-x-plegadas";
+
+function leerPlegadas() {
+  try { return new Set(JSON.parse(localStorage.getItem(CLAVE_PLEGADAS)) || []); } catch { return new Set(); }
+}
+
+function plegar(columna, plegada) {
+  columna.classList.toggle("columna--plegada", plegada);
+  columna.querySelector(".columna__cabecera").setAttribute("aria-expanded", String(!plegada));
+}
+
+const plegadas = leerPlegadas();
+for (const columna of document.querySelectorAll(".columna")) {
+  plegar(columna, plegadas.has(columna.dataset.tipo));
+  columna.querySelector(".columna__cabecera").addEventListener("click", () => {
+    const plegada = !columna.classList.contains("columna--plegada");
+    plegar(columna, plegada);
+    plegada ? plegadas.add(columna.dataset.tipo) : plegadas.delete(columna.dataset.tipo);
+    try { localStorage.setItem(CLAVE_PLEGADAS, JSON.stringify([...plegadas])); } catch { /* sin almacenamiento */ }
+  });
+}
+
 pintarToken();
 cargar();
