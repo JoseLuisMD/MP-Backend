@@ -99,10 +99,6 @@
     "estado": "publicada",
     "fecha": "2026-10-26T09:15:20.245Z"
   },
-  "66444e8f87c6": {
-    "estado": "publicada",
-    "fecha": "2026-10-26T09:33:32.504Z"
-  },
   "6d49f4e9da7c": {
     "estado": "publicada",
     "fecha": "2026-10-26T19:10:00.113Z"
@@ -114,5 +110,9 @@
   "068766d86233": {
     "estado": "publicada",
     "fecha": "2026-10-28T08:24:45.680Z"
+  },
+  "1905a727906d": {
+    "estado": "publicada",
+    "fecha": "2026-10-28T20:22:25.698Z"
   }
 }
