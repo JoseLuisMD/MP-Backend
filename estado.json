@@ -1,16 +1,4 @@
 {
-  "4cd73c23b4b9": {
-    "estado": "publicada",
-    "fecha": "2026-10-17T18:36:46.412Z"
-  },
-  "3235137598e1": {
-    "estado": "publicada",
-    "fecha": "2026-10-19T16:38:33.835Z"
-  },
-  "1055f85643aa": {
-    "estado": "publicada",
-    "fecha": "2026-10-19T22:09:32.443Z"
-  },
   "d72348296e08": {
     "estado": "publicada",
     "fecha": "2026-10-21T08:27:11.699Z"
@@ -30,10 +18,6 @@
   "4de7c1a869bf": {
     "estado": "publicada",
     "fecha": "2026-10-22T21:27:08.611Z"
-  },
-  "72fac9b2a201": {
-    "estado": "publicada",
-    "fecha": "2026-10-23T08:06:42.217Z"
   },
   "d9e345b95558": {
     "estado": "publicada",
@@ -126,5 +110,9 @@
   "449e52ad571c": {
     "estado": "publicada",
     "fecha": "2026-11-11T19:39:06.451Z"
+  },
+  "4b0ddff9a10f": {
+    "estado": "publicada",
+    "fecha": "2026-11-15T11:15:29.888Z"
   }
 }
