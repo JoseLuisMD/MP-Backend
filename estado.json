@@ -7,14 +7,6 @@
     "estado": "publicada",
     "fecha": "2026-10-24T19:51:08.890Z"
   },
-  "cd25e213275c": {
-    "estado": "publicada",
-    "fecha": "2026-10-25T08:27:03.519Z"
-  },
-  "dcf92293b9bd": {
-    "estado": "publicada",
-    "fecha": "2026-10-25T12:01:36.293Z"
-  },
   "eb2cc1dd5840": {
     "estado": "publicada",
     "fecha": "2026-10-26T09:15:20.245Z"
@@ -98,5 +90,9 @@
   "31a86c808eb0": {
     "estado": "publicada",
     "fecha": "2026-11-19T08:38:03.058Z"
+  },
+  "2da1af97bb4f": {
+    "estado": "publicada",
+    "fecha": "2026-11-20T10:25:04.439Z"
   }
 }
